@@ -1,0 +1,143 @@
+/*--- RESET STYLES ---*/
+
+html,
+body {
+  height: 100%;
+  line-height: 1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  display: block;
+  vertical-align: top;
+  max-width: 100%;
+  height: auto;
+}
+/*-------------------*/
+
+.custom-select {
+  width: 250px;
+  position: relative;
+}
+
+.custom-select__head {
+  height: 40px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  margin-bottom: 5px;
+  border: 1px solid #000;
+  cursor: pointer;
+}
+
+.custom-select__head-text {
+  pointer-events: none;
+}
+
+.custom-select__head .decor-img {
+  display: block;
+  pointer-events: none;
+}
+
+@media (any-hover: hover) {
+  .custom-select__head:focus {
+    outline: none;
+  }
+
+  .custom-select__head:focus-visible {
+    border-color: tomato;
+    outline: none;
+  }
+
+  .custom-select__head:hover {
+    border-color: tomato;
+  }
+}
+
+@media (any-hover: none) {
+  .custom-select__head:active {
+    border-color: tomato;
+    outline: none;
+  }
+}
+
+.custom-options-list {
+  position: absolute;
+  left: 0;
+  top: 45px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 0;
+  background-color: #ccc;
+  overflow: hidden;
+  transition: all .3s;
+  z-index: 2;
+
+  &.expanded {
+    border: 1px solid #000;
+  }
+}
+
+.custom-option {
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.custom-option__text {
+  display: block;
+  /* Set height for option item here. It impotant for calculate options list height. */
+  height: 40px;
+  line-height: 40px;
+  pointer-events: none;
+}
+
+@media (any-hover: hover) {
+
+  .custom-option:focus {
+    outline: none;
+  }
+
+  .custom-option:focus-visible {
+    background-color: #90ee9025;
+  }
+
+  .custom-option:hover {
+    background-color: #90ee9050;
+  }
+
+  .custom-option:hover .decor-img {
+    display: block;
+  }
+}
+
+@media (any-hover: none) {
+  .custom-option:active {
+    background-color: lightgreen;
+    outline: none;
+  }
+}
+
+.decor-img {
+  display: none;
+}
